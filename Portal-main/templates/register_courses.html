@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+
+{% block title %}
+Register Courses
+{% endblock %}
+
+{% block content %}
+    {% include "header.html" %}
+
+    {% block main_content %}
+    <style>
+        body {
+            background-color:lightyellow;
+            margin: 0;
+            padding: 0;
+        }
+        .selected {
+            background-color: #0056b3 !important;
+        }
+        .heading {
+            text-align:center;
+            background-color:lightgreen;
+            color:black;
+            margin: 0;
+            padding: 0.6rem;
+        }
+        .btn.btn-outline-success.btn-lg {
+            float: right;
+            margin-right: 9%;
+        }
+        .table th {
+            background-color: #f2f2f2;
+        }
+        .alert {
+            padding: 0.9rem;
+            background-color: #f44336;
+            color: white;
+            margin-top: 1rem;
+            margin-bottom: 1.2rem;
+            margin-left: 0.5rem;
+            margin-right: 0.5rem;
+        }
+        .footer {
+            padding-top : 0.9rem;
+        }
+    </style>
+        <h1 class="heading">Register Courses</h1>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="alert">
+                    <ul>
+                        {% for category, message in messages %}
+                            <li class="{{"category"}}">{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
+        {% endwith %}
+    <form method="POST" action="{{ url_for('register_courses') }}">
+        <table class= "table table-bordered border-warning">
+            <thead>
+                <tr>
+                    <th>Course Code</th>
+                    <th>Course Name</th>
+                    <th>Select</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for course in courses %}
+                <tr>
+                    <td>{{ course[0] }}</td>
+                    <td>{{ course[1] }}</td>
+                    <td>
+                        <input type="checkbox" class="btn-check" id="btn-check-{{ loop.index }}" name="course_codes[]" value="{{ course[0] }}" autocomplete="off"
+                        {% if course[0] in courses_selected %} checked {% endif %} onclick="change(this)">
+                        <label class="btn btn-primary" for="btn-check-{{ loop.index }}">Select</label>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <button type="submit" class = "btn btn-outline-success btn-lg"><b>Confirm</b></button>
+    </form>
+    <script>
+        function change(event) {
+            var label = document.querySelector('label[for="' + event.id + '"]');
+            if(event.checked){
+                label.classList.add('Selected');
+                label.textContent = 'Selected';
+            }
+            else{
+                label.classList.remove('Selected');
+                label.textContent = 'Select';
+            }
+        }
+    </script>
+    {% endblock main_content %}
+    <footer class="footer">
+        {% include "footer.html" %}
+    </footer>
+{% endblock %}

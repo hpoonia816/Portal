@@ -1,0 +1,77 @@
+{% extends "base.html" %} {% block title %} Registered Courses {% endblock %} {%
+block content %} {% include "header.html" %} {% block main_content %}
+<style>
+  body {
+    background-color: lightyellow;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  .content {
+    flex: 1;
+  }
+  .heading {
+    text-align: center;
+    background-color: lightgreen;
+    color: black;
+    margin: 0;
+    padding: 0.8rem;
+  }
+  .table th {
+    background-color: #f2f2f2;
+  }
+  .alert {
+    padding: 0.75rem;
+    background-color: #f44336;
+    color: white;
+    margin: 1rem;
+  }
+</style>
+<div class="content">
+  <h1 class="heading">Your Registered Courses</h1>
+
+  {% with messages = get_flashed_messages(with_categories=true) %} {% if
+  messages %}
+  <div class="alert">
+    <ul>
+      {% for category, message in messages %}
+      <li class="{{ category }}">{{ message }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %} {% endwith %}
+
+  <table class="table table-bordered border-warning">
+    <thead>
+      <tr>
+        <th>Course Code</th>
+        <th>Course Name</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for course in data %}
+      <tr>
+        <td>{{ course[0] }}</td>
+        <td>{{ course[1] }}</td>
+        <td>
+          <form
+            method="POST"
+            ,
+            action="{{url_for('unregister_course')}}"
+            onsubmit="return confirm('Are you sure you want to unregister from this course?');"
+          >
+            <input type="hidden" name="course_code" value="{{ course[0] }}" />
+            <button class="btn btn-warning" type="submit">
+              Unregister Course
+            </button>
+          </form>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock main_content %} {% include "footer.html" %} {% endblock %}

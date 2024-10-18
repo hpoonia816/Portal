@@ -1,0 +1,312 @@
+{% extends "base.html" %} {% block title %} Reference Books {% endblock %} {%
+block content %} {% include "header.html" %} {% block main_content %}
+<style>
+  body {
+    background-color: lightyellow;
+    margin: 0;
+    padding: 0;
+  }
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 2rem;
+  }
+  .card {
+    width: 18rem;
+    border-radius: 2rem;
+    margin: 1rem;
+  }
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  @media (min-width: 1056px) and (max-width: 1407px) {
+    .card-container {
+      justify-content: space-evenly;
+    }
+  }
+</style>
+<div class="card-container">
+  <div class="card" style="width: 18rem">
+    <img
+      src="{{url_for('static',filename ='book1.jpg')}}"
+      class="card-img-top"
+      alt="image not loaded"
+    />
+    <div class="card-body">
+      <h5 class="card-title">SUPERINTELLIGENCE</h5>
+      <p class="card-text">
+        One of the best book about Artifical Intelligence by <b>NICK BOSTROM</b>
+      </p>
+      <a
+        href="https://www.amazon.in/Superintelligence-Dangers-Strategies-Nick-Bostrom/dp/0198739834/ref=sr_1_1?crid=228CBTMQCQGWF&dib=eyJ2IjoiMSJ9.scnNfJfANXyUv5Cml3Un4fMCLGTTuB4Ac7TGZsctnqWdXvFJ1sPKC0dj4FX8S7IICbWQ-euXeBU9xyhoY2Ie4k0tTpjB79QZx88K1s9liXSgt7wd66JW4Qv0r0H0y2EPn-gtBgJT_SJs0tXsdXzWjeqP_219XYOcD_SSaoebYEEtYt87Ua6OujTMXa2WjMY99uv0IQIhMU5LOw1zF8JH9ysfdvHq1nAfLMQMaK3cY30.AZMSbaV3o-hyBmngAFNFYwt7hbfvN_JYt1FxPT-x-V4&dib_tag=se&keywords=superintelligence+by+nick+bostrom&qid=1720079357&sprefix=superin%2Caps%2C264&sr=8-1"
+        target="”_blank”"
+        class="btn btn-dark"
+        >Link to Buy</a
+      >
+    </div>
+  </div>
+
+  <div class="card" style="width: 18rem">
+    <img
+      src="{{url_for('static',filename ='book2.jpg')}}"
+      class="card-img-top"
+      alt="image not loaded"
+    />
+    <div class="card-body">
+      <h5 class="card-title">Environmental Chemistry (10th Edition)</h5>
+      <p class="card-text">
+        The textbook of Enviromental Chemistry by <b>MANAHAN STANLEY</b>
+      </p>
+      <a
+        href="https://www.amazon.in/Environmental-Chemistry-Stanley-Manahan/dp/1498776930/ref=sr_1_2?crid=3J105TVK3VHVI&dib=eyJ2IjoiMSJ9.NjurU3RTT6mm4IusM7ilo-OxogniGzwM-L4C51q13r8wq2O1LiTFb6oiWNpi-FdqofYWVvBfs_ldxrTB9grLFGf_J7sOburMSpZOcp54-GSbsue63ddq51phgyk6Gs4aWjX1OhV7vg0IWnc2g65RD9AHW8TIR7CLU3hChN2fpyScseQa8Tdszpj5WZzhzweLf_7MfCEQsdMgIofRqKFVDxsurEPJ0ZZv1xJ84aW3Jy0.MRlor6gufKxqB_mU0fumbGqNtJdJ44S8hJDuucuWlZg&dib_tag=se&keywords=environmental+chemistry+manahan&qid=1720079618&sprefix=environmental+chemistry+m%2Caps%2C265&sr=8-2"
+        target="_blank"
+        class="btn btn-dark"
+        >Link to Buy</a
+      >
+    </div>
+  </div>
+
+  <div class="card" style="width: 18rem">
+    <img
+      src="{{url_for('static',filename ='book3.jpg')}}"
+      class="card-img-top"
+      alt="image not loaded"
+    />
+    <div class="card-body">
+      <h5 class="card-title">
+        Discrete Mathematics and its Applications (7th Edition)
+      </h5>
+      <p class="card-text">
+        One of the best book for understanding Discrete Mathematics and Graph
+        Theory by <b>KENNETH H ROSEN</b>
+      </p>
+      <a
+        href="https://www.amazon.in/Discrete-Mathematics-applications-combinatorics-theory/dp/B0D769TYDG/ref=sr_1_4?crid=KIDTQWG9UHUY&dib=eyJ2IjoiMSJ9.U0SObL5-LGRwQlT5D2S-zuRYxqdNNE66kKVyTqNQAZJJmBeFPpV8CLn9qsGN3YZyhqEefGOWZkyismEqxNdK_l0k17gpo1nxaON6fPmcS6bDm63K2booRMXPz4zi5NJDZEPyh2ijaHZEHYCylLLBN4wTZ8BXlhiq7rzw-JLCle_BGWPL-IKCoXVnJfcwwCdbaOaL22XMybOkK-48Wh4E02Db2BdXTakaCXYj_0aiJkE.6_GfSIi0sUXNd4YKROW0HlugejcH_INjpliCOvyP164&dib_tag=se&keywords=discrete+mathematics+and+its+applications+7th+edition&qid=1720079685&sprefix=discrete+mathematics+and+its+applications+7th+%2Caps%2C217&sr=8-4"
+        target="_blank"
+        class="btn btn-dark"
+        >Link to Buy</a
+      >
+    </div>
+  </div>
+
+  <div class="card" style="width: 18rem">
+    <img
+      src="{{url_for('static',filename ='book4.jpg')}}"
+      class="card-img-top"
+      alt="image not loaded"
+    />
+    <div class="card-body">
+      <h5 class="card-title">Introduction to C-Programming (2nd Edition)</h5>
+      <p class="card-text">
+        Best book to build up your interest in coding and learn C-language by
+        <b>REEMA THAREJA</b>
+      </p>
+      <a
+        href="https://www.amazon.in/Introduction-C-Programming-Reema-Thareja/dp/0199452059/ref=sr_1_3?crid=1W90ICXYKCYB6&dib=eyJ2IjoiMSJ9.vBjxaBm4d_6-NJ-ZdtwUyrRxO_28c72AzyxYaHW9kCWBHBI1UOo_VzbFC3Tc5GXmoTdeXzw8BHxkrMqoHrJeM4VvtkTWxrVQmwec1iBd7U_SHPiPWy3G4OuzmFymxMV3Gg1JBBU5LWv6RALC90ePjA.M75MKcn5dHKrxxnAWDCaXiMdKUMqIGplEOlbJ40asRo&dib_tag=se&keywords=introduction+to+c+programming+reema&qid=1720079775&sprefix=introduction+to+c+programming+reem%2Caps%2C275&sr=8-3"
+        target="_blank"
+        class="btn btn-dark"
+        >Link to Buy</a
+      >
+    </div>
+  </div>
+
+  <div class="card" style="width: 18rem">
+    <img
+      src="{{url_for('static',filename ='book5.jpg')}}"
+      class="card-img-top"
+      alt="image not loaded"
+    />
+    <div class="card-body">
+      <h5 class="card-title">Introduction to Algorithms (4th Edition)</h5>
+      <p class="card-text">
+        A good book to strengthen your understanding about Data Structures and
+        Algorithms by
+        <b
+          >THOMAS H.CORMEN, CHARLES E.LEISERSON, RONALD L.RIVEST, CLIFFORD
+          STEIN</b
+        >
+      </p>
+      <a
+        href="https://www.amazon.in/INTRODUCTION-ALGORITHMS-FOURTH-Charles-Leiserson/dp/026204630X/ref=sr_1_3?crid=1V3NLMM8MI1SL&dib=eyJ2IjoiMSJ9.LwnrJISAnSBm1xAf36YFrAYfnitdbh14IOId1WTsyDVf5IlzzxLuMZuvxj9yg_9AfKv9ag4Oq8w8bNK4AE5ADdSo2cemtTTknK2YO1RkzQRF7qyI6DHLWpvVzu7puSJn5oxt0_Wapp3y9tcW1MyInoSXxv1u13M4d1v0gHXfKol5bjXNkinrQV0YjVYPrwV02Wl8Z6Skzw8xFMrh0MktCh-es_mgVnOzQisq6f4xgcE.WmAB8m0HjanZAkNy6AFJXw7ONGqO8VHVLkR1ZHG3-PU&dib_tag=se&keywords=introduction+to+algorithms&qid=1720079834&sprefix=introducrtion+to%2Caps%2C252&sr=8-3"
+        target="_blank"
+        class="btn btn-dark"
+        >Link to Buy</a
+      >
+    </div>
+  </div>
+
+  <div class="card" style="width: 18rem">
+    <img
+      src="{{url_for('static',filename ='book6.jpg')}}"
+      class="card-img-top"
+      alt="image not loaded"
+    />
+    <div class="card-body">
+      <h5 class="card-title">Thomas Calculus (15th Edition)</h5>
+      <p class="card-text">
+        A good book for strengthening your Mathematics in the field of Calculus
+        by <b>JOEL HASS, CHRISTOPHER HEIL, PRZEMYSLAW BOGACK, MAURICE D.WEIR</b>
+      </p>
+      <a
+        href="https://www.amazon.in/Thomas-Calculus-15th-Maurice-Weir/dp/8119896602/ref=sr_1_3?crid=2W48MJ0XBNYJA&dib=eyJ2IjoiMSJ9.hxkBW-l66lsrLvHR1wshuHinKo_tE3qEjAGw3MwuYpEny6rO-_AJ9cgzrPBhBedYI7Ylekqd9_DmMCFJcWqqZpBQ9rPIO19nMeyVuvS9qoq8H5zyMhy10Q7GBdwtusKR85_s0KWb4tNMZHIgBk9TBsPcbcg22a46rv7QKydtCnZWN3ybkq015rl6z0VFh8Qu6pJjUDxPe-TKuHt17SuszCfKcGzvttIpQExcgmxSL7g.IWa9QGHPjFZbpqbASfiropDXqQVBh6MMXlTm6NpeAFc&dib_tag=se&keywords=thomas+calculus&qid=1720079874&sprefix=thomas+ca%2Caps%2C276&sr=8-3"
+        target="_blank"
+        class="btn btn-dark"
+        >Link to Buy</a
+      >
+    </div>
+  </div>
+
+  <div class="card" style="width: 18rem">
+    <img
+      src="{{url_for('static',filename ='book7.jpg')}}"
+      class="card-img-top"
+      alt="image not loaded"
+    />
+    <div class="card-body">
+      <h5 class="card-title">Elementary Linear Algebra (11th Edition)</h5>
+      <p class="card-text">
+        A good book for strengthening your Mathematics in the field of Algebra
+        by <b>HOWARD ANTON, CHRIS RORRES</b>
+      </p>
+      <a
+        href="https://www.amazon.in/Elementary-Linear-Algebra-Supplemental-Applications/dp/812656296X/ref=sr_1_3?crid=3NTQ495MW23R9&dib=eyJ2IjoiMSJ9.KLzc6y2hviITcj5jWLamUADRLDQ6XRYEBwt6fY8Pg9qZnJvEtokw-3ZVMysMrzBis3syeEuhncQ8rs9YrKDq_BrPAI4U-pjWuvRLTWzNta8hObKM4bYuawmvlkVlfsePOvqojypGPJ7Pvn_FcIyWXAmHl2pQRZjLpzL_FfJenF2b0FPqAYPaNxyyDieDwOi9ZgJhtIUEcq0SWcVLXncH2sN4ynH-VHSLGLu-0RMNLQ4.3KVVyRRdOIRrlCjgeIF-Wbf7LW-ZXhHFcj_XtzmpTLE&dib_tag=se&keywords=elementary+linear+algebra&qid=1720079943&sprefix=elementary+lin%2Caps%2C1469&sr=8-3"
+        target="_blank"
+        class="btn btn-dark"
+        >Link to Buy</a
+      >
+    </div>
+  </div>
+
+  <div class="card" style="width: 18rem">
+    <img
+      src="{{url_for('static',filename ='book8.jpg')}}"
+      class="card-img-top"
+      alt="image not loaded"
+    />
+    <div class="card-body">
+      <h5 class="card-title">
+        Probability and Statistics for Engineers and Scientists (4th Edition)
+      </h5>
+      <p class="card-text">
+        A good book to strengthen your Mathematics in the field of Statistics
+        and Probability by <b>SHELDON ROSS</b>
+      </p>
+      <a
+        href="https://www.flipkart.com/introduction-probability-statistics-engineers-scientists/p/itmfc8hyujztagw7?pid=9780123704832&lid=LSTBOK9780123704832QXVGJX&marketplace=FLIPKART&q=probability+and+statistics+for+engineers+and+scientists&store=bks%2Ff50%2Fpz1&srno=s_1_2&otracker=AS_QueryStore_OrganicAutoSuggest_1_46_na_na_na&otracker1=AS_QueryStore_OrganicAutoSuggest_1_46_na_na_na&fm=organic&iid=3d7d39d2-4970-4ca6-a063-41dcc3c12484.9780123704832.SEARCH&ppt=hp&ppn=homepage&ssid=l9wu7hi2c00000001720080115656&qH=0c023f8b3969da65"
+        target="_blank"
+        class="btn btn-dark"
+        >Link to Buy</a
+      >
+    </div>
+  </div>
+
+  <div class="card" style="width: 18rem">
+    <img
+      src="{{url_for('static',filename ='book9.jpg')}}"
+      class="card-img-top"
+      alt="image not loaded"
+    />
+    <div class="card-body">
+      <h5 class="card-title">Ordinary Differential Equations (2nd Edition)</h5>
+      <p class="card-text">
+        A good book to strengthen your Mathematics in the field of Differential
+        Equations by <b>KENNETH B.HOWELL</b>
+      </p>
+      <a
+        href="https://www.amazon.in/ORDINARY-DIFFERENTIAL-EQUATIONS-INTRODUCTION-FUNDAMENTALS/dp/1138605832/ref=sr_1_2?crid=27FSGYYI8JSC2&dib=eyJ2IjoiMSJ9.19uooPWEJqOuiT1qeq-bwWo-5gVA0TPX2U6xMw5g7cbGjHj071QN20LucGBJIEps.ZvPRalmrUR7hSTJVX2NI2kaYIwryih4CZiYfzUgHxqo&dib_tag=se&keywords=ordinary+differential+equations+kenneth+B+howell&qid=1720080194&sprefix=ordinary+differential+equations+kenneth+b+howel%2Caps%2C288&sr=8-2"
+        target="_blank"
+        class="btn btn-dark"
+        >Link to Buy</a
+      >
+    </div>
+  </div>
+
+  <div class="card" style="width: 18rem">
+    <img
+      src="{{url_for('static',filename ='book10.jpg')}}"
+      class="card-img-top"
+      alt="image not loaded"
+    />
+    <div class="card-body">
+      <h5 class="card-title">Engineering Mechanics (Static and Dynamic)</h5>
+      <p class="card-text">
+        A good book to strengthen your Mechanics by <b>DR. D.S. KUMAR</b>
+      </p>
+      <a
+        href="https://www.amazon.in/Engineering-Mechanics-Statics-Dynamics-Kumar/dp/9350142929/ref=sr_1_1?crid=21ZZIDQPBIU74&dib=eyJ2IjoiMSJ9.0Rp9a2qHZpYNFz4AheFdDwu2UWkKhybljNDcAmq4oer357htw43itPjUWeunZtADpsXwX3kA6Ru_8o_xgAOUOPqW_nJ3SG99vgYueNEUz1I.U0iXBMz6hrEJw3A5WbuQULNcZmlRISF8dIKowokDwSg&dib_tag=se&keywords=engineering+mechanics+statics+and+dynamics+dr+d+s+kumar&nsdOptOutParam=true&qid=1720080249&sprefix=engineering+mechanics+statics+and+dynamics+dr+d+s+kumar%2Caps%2C228&sr=8-1"
+        target="_blank"
+        class="btn btn-dark"
+        >Link to Buy</a
+      >
+    </div>
+  </div>
+
+  <div class="card" style="width: 18rem">
+    <img
+      src="{{url_for('static',filename ='book11.jpg')}}"
+      class="card-img-top"
+      alt="image not loaded"
+    />
+    <div class="card-body">
+      <h5 class="card-title">
+        Kinematics, Dynamics, and Design of Machinery (3rd Edition)
+      </h5>
+      <p class="card-text">
+        A good book to strengthen your concepts of Kinematics, Dynamics and
+        Machinery by <b>KENNETH J.WALDRON, GARY L.KINZEL, SUNIL K.AGRAWAL</b>
+      </p>
+      <a
+        href="https://www.amazon.in/Kinematics-Dynamics-Machinery-Kenneth-Waldron/dp/1118933281/ref=sr_1_4?crid=37O0AUM9J7ARR&dib=eyJ2IjoiMSJ9.WyUUjPzkFqkh5Z-dqJreCDfsnoPWjPdZrPiwaMsHKs9ss2JPvEqC0MBQ1WA7eXQbA4Yr-MUN_HoRxAOL1ZlQTKz1IfeIE4fM-5RfJWiAf5bXLCNSlBGrRNpdbRPFu4XKU6S16f0P6gvLCEfQYpNxIK1l9O-1wAanhdCzSEpqpPXM3ePYlQLF3kB0fTZvzjVikr-wLIowBPnCe4w3wARk9t0_T-VR50ZRDInh8fNQKEU.fdGdzcYFYqpmZT5yzPAff-m2l_me9YdjAU4zZAsoDPo&dib_tag=se&keywords=kinematics+dynamics+and+design+of+machinery&qid=1720080324&sprefix=kinematics+dynamics+and+design+o+machinery%2Caps%2C242&sr=8-4"
+        target="_blank"
+        class="btn btn-dark"
+        >Link to Buy</a
+      >
+    </div>
+  </div>
+
+  <div class="card" style="width: 18rem">
+    <img
+      src="{{url_for('static',filename ='book12.jpeg')}}"
+      class="card-img-top"
+      alt="image not loaded"
+    />
+    <div class="card-body">
+      <h5 class="card-title">Modern Physics (3rd Edition)</h5>
+      <p class="card-text">
+        A good book to get better understanding about Modern Physics by
+        <b>KENNETH KRANE</b>
+      </p>
+      <a
+        href="https://www.flipkart.com/modern-physics/p/itmfc8q29tftgsgk?pid=9781118061145&lid=LSTBOK9781118061145E8YCKX&marketplace=FLIPKART&q=modern+physics+kenneth+&store=bks&srno=s_1_5&otracker=search&otracker1=search&fm=Search&iid=5c25c619-67fa-48b5-9a51-ebb971d9337a.9781118061145.SEARCH&ppt=sp&ppn=sp&ssid=orkfbv0k3k0000001720080486538&qH=4c02e1ae0dbfa99d"
+        target="_blank"
+        class="btn btn-dark"
+        >Link to Buy</a
+      >
+    </div>
+  </div>
+
+  <div class="card" style="width: 18rem">
+    <img
+      src="{{url_for('static',filename ='book13.jpg')}}"
+      class="card-img-top"
+      alt="image not loaded"
+    />
+    <div class="card-body">
+      <h5 class="card-title">Heat and Mass Transfer (3rd Edition)</h5>
+      <p class="card-text">
+        One of the best books to enhance your understanding about Heat and Mass
+        Transfer by <b>P K NAG</b>
+      </p>
+      <a
+        href="https://www.amazon.in/Heat-Mass-Transfer-P-Nag/dp/0070702535/ref=sr_1_3?crid=1QVGRCKVQFL4O&dib=eyJ2IjoiMSJ9.D8X5dx-AsTJYC3Av1w0eVg.EJ6SHqHvwSvzE10FBgUth3o9ol9Xjx0XLaOR6qghJRU&dib_tag=se&keywords=heat+and+mass+transfer+p+k+nag&qid=1720080583&sprefix=heat+and+mass+transfer+p+k+nag%2Caps%2C203&sr=8-3"
+        target="_blank"
+        class="btn btn-dark"
+        >Link to Buy</a
+      >
+    </div>
+  </div>
+</div>
+{% endblock main_content %} {% include "footer.html" %} {% endblock %}

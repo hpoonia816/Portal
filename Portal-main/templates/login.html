@@ -1,0 +1,91 @@
+{% extends "base.html" %} {% block title %} Login Page {% endblock %} {% block
+content %}
+<style>
+  body {
+    background-color: #fffdd0;
+  }
+  .custom {
+    width: 60%;
+    margin: 0 auto;
+    color: black;
+    padding: 3rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    background-color: lightgrey;
+  }
+  .help {
+    margin-top: 1rem;
+  }
+  .form-label {
+    margin-bottom: 0.2rem; 
+  }
+  .form-control {
+    margin-bottom: 1rem; 
+  }
+  .form-group {
+    margin-bottom: 0.5rem;
+  }
+  .btn.btn-dark {
+    margin-top: 1rem;
+  }
+  @media (min-width: 517px) and (max-width: 767px) {
+    .custom {
+      width: 70%;
+      padding: 1.5rem;
+    }
+    .help {
+      font-size: 1rem;
+    }
+  }
+  @media (min-width: 425px) and (max-width: 516px) {
+    .custom {
+      width: 70%;
+      padding: 1.5rem;
+    }
+    .help {
+      font-size: 0.8rem;
+    }
+  }
+  @media (min-width: 320px) and (max-width: 424px) {
+    .custom {
+      width: 80%;
+      padding: 1rem;
+    }
+    .help {
+      font-size: 0.7rem;
+    }
+  }
+</style>
+<div class="container mt-5 custom">
+  <h2>Login</h2>
+  <form action="/login" method="POST">
+    <div class="form-group">
+      <label for="email" class="form-label">Email:</label>
+      <input type="text" id="email" name="email" class="form-control" />
+    </div>
+    <div class="form-group">
+      <label for="password" class="form-label">Password:</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        class="form-control"
+      />
+      <a href= "{{ url_for('forgot_password') }}" class="d-block mt-2">Forgot Password?</a>
+      <h6 class="help">
+        Don't have an existing account? Please click here to create a new
+        account: <a href="{{ url_for('signup') }}">Sign-Up</a>
+      </h6>
+    </div>
+    {% with messages = get_flashed_messages(with_categories=true) %} {% if
+    messages %}
+    <ul>
+      {% for category, message in messages %}
+      <li class="text-danger">{{ message }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %} {% endwith %}
+    <input type="submit" value="Login" class="btn btn-dark" />
+  </form>
+</div>
+{%endblock%}

@@ -1,0 +1,135 @@
+{% extends "base.html" %} {% block title %} Edit Page {% endblock %} {% block
+content %} {% include "header.html" %} {% block main_content %}
+<style>
+  body {
+    background-color: lightyellow;
+    padding: 0;
+    margin: 0;
+  }
+  .containers {
+    width: 55%;
+    margin: 0 auto;
+    margin-top: 2rem;
+    background: lightgrey;
+    padding: 1.8rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+  }
+  h2 {
+    text-align: center;
+    color: darkgreen;
+  }
+  .form-group {
+    margin-bottom: 1.2rem;
+  }
+  .form-group label {
+    display: block;
+    margin-bottom: 0.2rem;
+    color: #333;
+  }
+  .form-group input {
+    width: 90%;
+    padding: 0.5rem;
+    box-sizing: border-box;
+  }
+  .form-group input[readonly] {
+    background-color: #e9ecef;
+    cursor: not-allowed;
+  }
+  .alert {
+    padding: 0.8rem;
+    background-color: #f44336;
+    color: white;
+    margin-bottom: 1rem;
+  }
+  @media (min-width: 769px) and (max-width: 925px) {
+    .containers {
+      width: 65%;
+    }
+  }
+  @media (min-width: 320px) and (max-width: 495px) {
+    .containers {
+      width: 85%;
+    }
+  }
+  @media (min-width: 496px) and (max-width: 768px) {
+    .containers {
+      width: 75%;
+    }
+  }
+</style>
+<div class="containers">
+  <h2>Edit Profile</h2>
+  <form action="{{ url_for('edit_profile') }}" method="POST">
+    {{ form.hidden_tag() }}
+    <div class="form-group">
+      <label for="firstname">{{ form.firstname.label }}</label>
+      {{ form.firstname(class="form-control") }} {% for error in
+      form.firstname.errors %}
+      <span style="color: red">[{{ error }}]</span><br />
+      {% endfor %}
+    </div>
+    <div class="form-group">
+      <label for="middlename">{{ form.middlename.label }}</label>
+      {{ form.middlename(class="form-control") }} {% for error in
+      form.middlename.errors %}
+      <span style="color: red">[{{ error }}]</span><br />
+      {% endfor %}
+    </div>
+    <div class="form-group">
+      <label for="lastname">{{ form.lastname.label }}</label>
+      {{ form.lastname(class="form-control") }} {% for error in
+      form.lastname.errors %}
+      <span style="color: red">[{{ error }}]</span><br />
+      {% endfor %}
+    </div>
+    <div class="form-group">
+      <label for="mobilenumber">{{ form.mobilenumber.label }}</label>
+      {{ form.mobilenumber(class="form-control") }} {% for error in
+      form.mobilenumber.errors %}
+      <span style="color: red">[{{ error }}]</span><br />
+      {% endfor %}
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input
+        type="text"
+        id="email"
+        name="email"
+        value="{{ form.email.data }}"
+        readonly
+        class="form-control"
+      />
+    </div>
+    <div class="form-group">
+      <label for="oldpassword">{{ form.oldpassword.label }}</label>
+      {{ form.oldpassword(class="form-control", type="password") }} {% for error
+      in form.oldpassword.errors %}
+      <span style="color: red">[{{ error }}]</span><br />
+      {% endfor %}
+    </div>
+    <div class="form-group">
+      <label for="newpassword">{{ form.newpassword.label }}</label>
+      {{ form.newpassword(class="form-control", type="password") }} {% for error
+      in form.newpassword.errors %}
+      <span style="color: red">[{{ error }}]</span><br />
+      {% endfor %}
+    </div>
+    {% with messages = get_flashed_messages(with_categories=true) %} {% if
+    messages %}
+    <div class="alert">
+      <ul>
+        {% for category, message in messages %}
+        <li class="{{ category }}">{{ message }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %} {% endwith %}
+    <div class="d-grid gap-2">
+      <button type="submit" class="btn btn-outline-success">
+        <b>Save Changes</b>
+      </button>
+    </div>
+  </form>
+</div>
+{% endblock main_content %} {% include "footer.html" %} {% endblock content %}
